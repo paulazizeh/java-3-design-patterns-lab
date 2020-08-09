@@ -41,6 +41,19 @@ public interface CustomerRepository {
      * @throws DuplicateCustomerException
      */
     void update(Customer customer) throws CustomerNotFoundException, DuplicateCustomerException;
+
+    /**
+     * Delete a given {@link Customer} from the repository by account number.
+     * This method throws a {@link CustomerNotFoundException} when the Customer to delete could not be found by account number.
+     * @param accountNumber The account number of the Customer to search for and delete.
+     * @return true if the deletion was successful, false otherwise.
+     * @throws CustomerNotFoundException
+     */
     boolean delete(UUID accountNumber) throws CustomerNotFoundException;
+
+    /**
+     * Returns back the total count of Customers.
+     * @return The current count of customers.
+     */
     int count();
 }
