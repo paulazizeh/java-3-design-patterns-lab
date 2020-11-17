@@ -11,7 +11,7 @@ public class Main {
     private static final String DELETE_CUSTOMER = "5";
     private static final String EXIT = "6";
 
-    public static void main(String[] args) throws CustomerNotFoundException {
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String option = displayMainMenu(scanner);
 
@@ -78,7 +78,7 @@ public class Main {
         }
     }
 
-    private static void findByEmail(Scanner scanner) throws CustomerNotFoundException {
+    private static void findByEmail(Scanner scanner) {
         System.out.print("Email address: ");
         String input = scanner.nextLine();
         Customer customer;
