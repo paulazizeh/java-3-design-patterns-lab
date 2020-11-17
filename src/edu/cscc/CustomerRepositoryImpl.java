@@ -6,6 +6,10 @@ import java.util.UUID;
 public class CustomerRepositoryImpl implements CustomerRepository {
     HashMap<UUID, Customer> customerInfo = new HashMap<UUID, Customer>();
 
+    public CustomerRepositoryImpl() {
+
+    }
+
     @Override
     public Customer create(Customer customer) throws DuplicateCustomerException {
         if(findByEmailAddress(customer.getEmailAddress()) != null) {
